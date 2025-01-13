@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'url'
-import { dirname, join } from 'path'
+import path, { dirname, join } from 'path'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 export default defineNuxtConfig({
@@ -9,6 +9,13 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@vuetify/loader-shared': path.resolve(__dirname, 'vuetify.workaround.js'),
+      },
     },
   },
   vuetify: {
