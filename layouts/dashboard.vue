@@ -4,8 +4,15 @@
     <v-main class="fill-height">
       <slot />
     </v-main>
-    <common-confirm v-model="showDialog" v-bind="dialogProps">
-      <component :is="confirmComponent" v-if="confirmComponent" v-bind="componentProps" />
+    <common-confirm
+      v-model="showDialog"
+      v-bind="dialogProps"
+    >
+      <component
+        :is="confirmComponent"
+        v-if="confirmComponent"
+        v-bind="componentProps"
+      />
     </common-confirm>
   </NuxtLayout>
 </template>
