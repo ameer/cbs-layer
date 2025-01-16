@@ -44,21 +44,40 @@
       v-model:opened="open"
       class="px-4 mt-12"
     >
-      <v-list-item
-        v-for="(item, i) in props.menus"
-        :key="`nav-menu-${i}`"
-        class=" rounded-lg"
-        nav
-        :to="item.path"
-        :prepend-icon="item.icon"
-      >
-        <template #title>
-          <div
-            class="text-body-1"
-            v-text="item.text"
+      <template v-for="(item, i) in props.menus" :key="`nav-menu-${i}`">
+        <v-list-group v-if="item.hasChildren">
+          <template #activator="{ props }">
+            <v-list-item
+              v-bind="props"
+              prepend-icon="mdi-account-circle"
+              :title="item.text"
+            />
+          </template>
+          <v-list-item
+            v-for="([text, icon, path], j) in item.children"
+            :key="`subgroup-${i}-${j}`"
+            :prepend-icon="icon"
+            nav
+            :to="path"
+            :title="text"
+            :value="text"
           />
-        </template>
-      </v-list-item>
+        </v-list-group>
+        <v-list-item
+          v-else
+          class="rounded-lg"
+          nav
+          :to="item.path"
+          :prepend-icon="item.icon"
+        >
+          <template #title>
+            <div
+              class="text-body-1"
+              v-text="item.text"
+            />
+          </template>
+        </v-list-item>
+      </template>
     </v-list>
     <div class="px-4 mt-auto mb-3">
       <v-divider class="py-2" />
