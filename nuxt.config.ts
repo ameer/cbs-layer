@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@sidebase/nuxt-auth'],
   devtools: { enabled: true },
   css: [
-    '~/assets/css/main.css',
+    join(currentDir, './assets/css/main.css'),
   ],
   runtimeConfig: {
     public: {
