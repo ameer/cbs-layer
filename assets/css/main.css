@@ -16,3 +16,69 @@ html {
     src: url('/fonts/staticfonts/IRANYekanX-bold.woff') format('woff');
     font-weight: 700;
 }
+.text-uppercase input {
+    text-transform: uppercase !important;
+}
+
+.v-list-item__append .v-btn {
+    transition: all .3s ease-in-out;
+}
+
+.v-list-item__append .v-btn.translated {
+    transform: translate(45px, 50px) rotate(180deg);
+    z-index: 9;
+}
+
+.v-btn.v-btn--icon.v-btn--variant-outlined {
+    border: none !important;
+    box-shadow: 0 0 0 1px var(--color, currentColor) !important;
+}
+
+nav.v-navigation-drawer .v-list .v-list-item .v-list-item__prepend i.v-icon {
+    margin: 0 5px;
+}
+
+.v-navigation-drawer--rail:not(.v-navigation-drawer--expand-on-hover) .v-list-item .v-avatar,
+.v-navigation-drawer--rail.v-navigation-drawer--expand-on-hover:not(.v-navigation-drawer--is-hovering) .v-avatar {
+    --v-avatar-height: 40px !important;
+}
+
+.v-list-item__content {
+    z-index: 1;
+}
+
+.v-list-item--variant-text {
+    color: #000;
+}
+
+.v-list-item--active.v-list-item--variant-text {
+    color: #fff !important;
+}
+
+.v-list-item--active>.v-list-item__overlay {
+    background-color: #4d5999 !important;
+    opacity: 1 !important;
+}
+
+.v-list-item__prepend>.v-icon~.v-list-item__spacer,
+.v-list-item__prepend>.v-avatar~.v-list-item__spacer {
+    width: 8px !important;
+}
+
+.v-navigation-drawer__content {
+    display: flex;
+    flex-flow: column;
+}
+
+.v-navigation-drawer--rail .v-list-item.hide-append .v-list-item__append {
+    overflow: hidden;
+}
+
+.monospace {
+    font-family: monospace !important;
+}
+
+.v-data-table__th--sticky {
+    position: static !important;
+    left: unset !important;
+}
