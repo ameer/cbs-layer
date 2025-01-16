@@ -54,7 +54,7 @@
             />
           </template>
           <v-list-item
-            v-for="([text, icon, path], j) in item.children"
+            v-for="({ text, icon, path }, j) in item.children"
             :key="`subgroup-${i}-${j}`"
             :prepend-icon="icon"
             nav
