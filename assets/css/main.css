@@ -1,0 +1,18 @@
+:root {
+    --toastify-font-family: 'IRANYekan' !important;
+}
+
+html {
+    overflow-y: auto !important;
+}
+
+@font-face {
+    font-family: 'IRANYekan';
+    src: url('/fonts/staticfonts/IRANYekanX-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'IRANYekan';
+    src: url('/fonts/staticfonts/IRANYekanX-bold.woff') format('woff');
+    font-weight: 700;
+}
