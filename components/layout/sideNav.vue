@@ -11,12 +11,18 @@
       class="px-4 pt-4"
     >
       <template #prepend>
-        <v-avatar tile style="margin: 0 5px;">
-          <v-img src="/public/svg/logo.svg" :cover="false" />
+        <v-avatar
+          tile
+          style="margin: 0 5px;"
+        >
+          <v-img
+            :src="'/public/svg/logo.svg'"
+            :cover="false"
+          />
         </v-avatar>
       </template>
       <template #title>
-        <span class="text-primary text-h6 font-weight-bold">دیده‌بان</span>
+        <span class="text-primary text-h6 font-weight-bold">{{ dashboardTitle }}</span>
       </template>
       <template #append>
         <v-btn
@@ -34,7 +40,10 @@
         </v-btn>
       </template>
     </v-list-item>
-    <v-list v-model:opened="open" class="px-4 mt-12">
+    <v-list
+      v-model:opened="open"
+      class="px-4 mt-12"
+    >
       <v-list-item
         v-for="(item, i) in menus"
         :key="`nav-menu-${i}`"
@@ -44,7 +53,10 @@
         :prepend-icon="item.icon"
       >
         <template #title>
-          <div class="text-body-1" v-text="item.text" />
+          <div
+            class="text-body-1"
+            v-text="item.text"
+          />
         </template>
       </v-list-item>
     </v-list>
@@ -63,7 +75,7 @@
 <script lang="ts" setup>
 import userAvatar from './userAvatar.vue'
 
-const version = useRuntimeConfig().public.version
+const { version, dashboardTitle } = useRuntimeConfig().public
 const rail = ref(false)
 const open = ref(['Users'])
 const menus = ref(

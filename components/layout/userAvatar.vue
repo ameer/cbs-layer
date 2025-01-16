@@ -14,7 +14,10 @@
         v-bind="props"
       >
         <template #prepend>
-          <v-avatar rounded="lg" color="#e4e9eb">
+          <v-avatar
+            rounded="lg"
+            color="#e4e9eb"
+          >
             <v-icon color="grey">
               mdi-account
             </v-icon>
@@ -22,8 +25,14 @@
         </template>
         <template #title>
           <div class="d-flex flex-column">
-            <span class="text-body-1 font-weight-bold" v-text="data?.data.firstName" />
-            <span class="v-list-item-subtitle" v-text="data?.data.username" />
+            <span
+              class="text-body-1 font-weight-bold"
+              v-text="data?.firstName"
+            />
+            <span
+              class="v-list-item-subtitle"
+              v-text="data?.username"
+            />
           </div>
         </template>
         <template #append>
@@ -37,7 +46,10 @@
         </template>
       </v-list-item>
     </template>
-    <v-card min-width="300" class="px-4 pt-2 rounded-lg elevation-1">
+    <v-card
+      min-width="300"
+      class="px-4 pt-2 rounded-lg elevation-1"
+    >
       <v-list>
         <v-list-item
           variant="flat"
@@ -45,7 +57,10 @@
           style="margin-right: 1px;"
         >
           <template #prepend>
-            <v-avatar rounded="lg" color="#e4e9eb">
+            <v-avatar
+              rounded="lg"
+              color="#e4e9eb"
+            >
               <v-icon color="grey">
                 mdi-account
               </v-icon>
@@ -53,8 +68,14 @@
           </template>
           <template #title>
             <div class="d-flex flex-column">
-              <span class="text-body-1 font-weight-bold" v-text="data?.data.firstName" />
-              <span class="v-list-item-subtitle" v-text="data?.data.username" />
+              <span
+                class="text-body-1 font-weight-bold"
+                v-text="data.firstName"
+              />
+              <span
+                class="v-list-item-subtitle"
+                v-text="data.username"
+              />
             </div>
           </template>
         </v-list-item>
@@ -67,7 +88,10 @@
             @click="invoke(item.action)"
           >
             <template #title>
-              <span class="text-body-2" v-text="item.text" />
+              <span
+                class="text-body-2"
+                v-text="item.text"
+              />
             </template>
             <template #append>
               <v-switch
@@ -87,7 +111,10 @@
               />
             </template>
           </v-list-item>
-          <v-divider v-else-if="item.type === 'divider'" :key="`uad-${i}`" />
+          <v-divider
+            v-else-if="item.type === 'divider'"
+            :key="`uad-${i}`"
+          />
         </template>
       </v-list>
     </v-card>
