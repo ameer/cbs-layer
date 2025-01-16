@@ -16,7 +16,7 @@
           style="margin: 0 5px;"
         >
           <v-img
-            :src="'/public/svg/logo.svg'"
+            :src="'/svg/logo.svg'"
             :cover="false"
           />
         </v-avatar>
