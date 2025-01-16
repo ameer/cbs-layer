@@ -45,7 +45,7 @@
       class="px-4 mt-12"
     >
       <v-list-item
-        v-for="(item, i) in menus"
+        v-for="(item, i) in props.menus"
         :key="`nav-menu-${i}`"
         class=" rounded-lg"
         nav
@@ -75,19 +75,17 @@
 <script lang="ts" setup>
 import userAvatar from './userAvatar.vue'
 
+const props = defineProps({
+  menus: {
+    type: Array,
+    default: () => ([
+      { text: 'خانه', path: '/dash/', icon: 'mdi-home-outline' },
+    ]),
+  },
+})
 const { version, dashboardTitle } = useRuntimeConfig().public
 const rail = ref(false)
 const open = ref(['Users'])
-const menus = ref(
-  [
-    { text: 'خانه', path: '/dash/', icon: 'mdi-home-outline' },
-    { text: 'کاربران', path: '/dash/users', icon: 'mdi-account-group-outline' },
-    { text: 'درخواست‌ها', path: '/dash/requests', icon: 'mdi-database-arrow-up-outline' },
-    { text: 'گزارش‌ها', path: '/dash/reports', icon: 'mdi-chart-box-outline' },
-    // { text: 'مدیریت', path: '/dash/management', icon: 'mdi-family-tree' },
-    { text: 'تنظیمات', path: '/dash/settings', icon: 'mdi-cog-outline' },
-
-  ])
 </script>
 
 <style>
