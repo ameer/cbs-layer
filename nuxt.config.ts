@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     public: {
       version,
       baseURL: process.env.BASE_URL || 'http://localhost:9000',
-      title: 'عنوان داشبورد',
+      dashboardTitle: 'عنوان داشبورد',
     },
   },
   vite: {
