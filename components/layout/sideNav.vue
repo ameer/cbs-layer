@@ -49,7 +49,7 @@
           <template #activator="{ props }">
             <v-list-item
               v-bind="props"
-              prepend-icon="mdi-account-circle"
+              :prepend-icon="item.icon"
               :title="item.text"
             />
           </template>
