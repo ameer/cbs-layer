@@ -16,6 +16,7 @@ html {
     src: url('/fonts/staticfonts/IRANYekanX-bold.woff') format('woff');
     font-weight: 700;
 }
+
 .text-uppercase input {
     text-transform: uppercase !important;
 }
@@ -55,7 +56,7 @@ nav.v-navigation-drawer .v-list .v-list-item .v-list-item__prepend i.v-icon {
     color: #fff !important;
 }
 
-.v-list-item--active>.v-list-item__overlay {
+.v-list-item--active:not(.v-list-group__header)>.v-list-item__overlay {
     background-color: #4d5999 !important;
     opacity: 1 !important;
 }
