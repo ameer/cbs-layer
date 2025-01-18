@@ -46,9 +46,10 @@
     >
       <template v-for="(item, i) in props.menus" :key="`nav-menu-${i}`">
         <v-list-group v-if="item.hasChildren">
-          <template #activator="{ props }">
+          <template #activator="{ props: _props }">
             <v-list-item
-              v-bind="props"
+              class="rounded-lg"
+              v-bind="_props"
               :prepend-icon="item.icon"
               :title="item.text"
             />
@@ -56,6 +57,7 @@
           <v-list-item
             v-for="({ text, icon, path }, j) in item.children"
             :key="`subgroup-${i}-${j}`"
+            class="rounded-lg"
             :prepend-icon="icon"
             nav
             :to="path"
@@ -94,14 +96,24 @@
 <script lang="ts" setup>
 import userAvatar from './userAvatar.vue'
 
+interface Props {
+  menus: MenuItem[]
+}
+interface MenuItem {
+  text: string
+  path?: string
+  icon?: string
+  hasChildren?: boolean
+  children?: MenuItem[]
+}
 const props = defineProps({
   menus: {
     type: Array,
     default: () => ([
       { text: 'خانه', path: '/dash/', icon: 'mdi-home-outline' },
-    ]),
+    ] as MenuItem[]),
   },
-})
+}) as Props
 const { version, dashboardTitle } = useRuntimeConfig().public
 const rail = ref(false)
 const open = ref(['Users'])
